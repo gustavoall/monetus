@@ -14,3 +14,5 @@ composer install
 ```bash
 php server
 ```
+
+<!-- TO DO: Criar class token para criptografar e descriptografar tokens -->
