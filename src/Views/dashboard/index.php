@@ -1,8 +1,11 @@
-<section class="py-3">
+<?= $view->add('dashboard/menu/index');?>
+
+<section class="text-white py-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>dashboard</h1>
+                <h1>Dashboard</h1>
+                <hr>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, possimus id quaerat deleniti perferendis culpa sint fugiat aliquam laudantium distinctio harum est reprehenderit, voluptas sequi ducimus hic in ad. Deleniti!</p>
             </div>
         </div>
