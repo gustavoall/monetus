@@ -4,7 +4,7 @@ namespace Monetus\Controllers;
 
 use Monetus\Services\UserService;
 use Monetus\DTOs\registerUserDTO;
-use Monetus\DTOs\DTO;
+use Monetus\DTOs\UpdateUserDTO;
 
 class UserController 
 {
@@ -26,10 +26,8 @@ class UserController
 
     public function update($request, $response)
     {
-        DTO::obstruct('Super User', $request->body->super_user);
-        DTO::obstruct('Created at', $request->body->created_at);
-        DTO::isEmail('Email', $request->body->email);
-        UserService::updateUser($request, $response);
+        UpdateUserDTO::validate($request->body);
+        UserService::registerUser($request, $response);
     }
 
     public function destroy($request, $response)
