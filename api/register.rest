@@ -3,7 +3,7 @@ POST {{baseURL}}/api/register
 Content-Type: application/json
 
 {
-    "name": "CJ",
-    "email": "carl@jonhsson.com",
-    "password": "grove_stret"
+    "name": "Gustavo",
+    "email": "gustavo@admin.com",
+    "password": "admin"
 }

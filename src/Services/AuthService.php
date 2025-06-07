@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Monetus\Services;
 
@@ -6,9 +6,9 @@ use Monetus\Database\Database;
 use Monetus\Helpers\Token;
 
 
-class AuthService 
+class AuthService
 {
-    public static function auth($request, $response) 
+    public static function auth($request, $response)
     {
         $email = $request->body->email;
         $password = $request->body->password;
@@ -17,12 +17,13 @@ class AuthService
 
         try {
 
-            $user = $db->connect()->get('users', '*',[
+            $user = $db->connect()->get('users', '*', [
                 "email" => $email
             ]);
 
             if ($user === null) {
                 $response->json([
+                    "error" => true,
                     "status" => 301,
                     "message" => "Email or password incorret."
                 ]);
@@ -41,19 +42,25 @@ class AuthService
                 $response->json([
                     "token" => $_SESSION['user']
                 ]);
-                
-                return;
-            } 
-            $response->json([
-                "status" => 301,
-                "message" => "Email or password incorret."
-            ]);
 
-        } catch(\Exception $e) {
+                return;
+            }
+        } catch (\Exception $e) {
             $response->json([
+                "error" => true,
                 "status" => 301,
                 "message" => "Email or password incorret."
             ]);
         }
+    }
+
+    public static function logout($request, $response)
+    {
+        unset($_SESSION['user']);
+        session_destroy();
+        $response->json([
+            "success" => true,
+            "message" => "Logout successfully"
+        ]);
     }
 }

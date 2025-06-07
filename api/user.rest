@@ -9,9 +9,9 @@ POST {{baseURL}}/api/user
 Content-Type: application/json
 
 {
-    "name": "Big Smoke",
-    "email": "big@smoke.com",
-    "password": "grove_stret"
+    "name": "Maad dog",
+    "email": "mad@dog.com",
+    "password": "hiphop"
 }
 
 ### Update user
