@@ -52,7 +52,9 @@ class UserService
             ]);
 
             if ($users) {
-                echo json_encode($users);
+                return $users;
+            } else {
+                return [];
             }
 
         } catch(\Exception $error) {

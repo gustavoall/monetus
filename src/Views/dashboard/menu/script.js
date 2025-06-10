@@ -2,7 +2,6 @@ import { api } from '../../helpers/api.js';
 import Swal from 'sweetalert2';
 
 export function logout() {
-    console.log("aaaa")
     const logoutBtn = document.querySelector('#logout-btn');
 
     if (logoutBtn !== null) {
